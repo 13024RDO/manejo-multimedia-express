@@ -1,4 +1,4 @@
-import { upload } from "../src/settings/upload.config.js";
+import { upload } from "../settings/upload.config.js";
 
 export const uploadImage = (fielName) => (req, res, next) => {
   const uploadSingle = upload.single(fielName);

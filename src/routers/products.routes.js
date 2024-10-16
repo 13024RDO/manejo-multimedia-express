@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { uploadImage } from "../../middlewares/upload.middleware.js";
+import { uploadImage } from "../middlewares/upload.middleware.js";
 
 const productsRouter = Router();
 
