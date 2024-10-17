@@ -2,12 +2,12 @@
 
 Este proyecto implementa un servidor básico que permite a los empleados de una tienda agregar nuevos productos y adjuntar imágenes. El sistema utiliza Express.js y almacena temporalmente los productos en memoria.
 
-
 ## Funcionalidades
 
 1. **Configuración básica del servidor con Express.js:**
    - Organización modular del código (rutas, controladores, middlewares).
 2. **Endpoint para la creación de productos:**
+
    - POST /products
    - Campos: name, description, price
    - Adjunta una imagen usando Multer
@@ -46,5 +46,3 @@ Este proyecto implementa un servidor básico que permite a los empleados de una 
 ## Tecnologías utilizadas
 
 - Node.js
-- Vite.js
-- TailwindCSS

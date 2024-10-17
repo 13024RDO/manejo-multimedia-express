@@ -1,9 +1,9 @@
 export const products = [
   {
     id: 1,
-    name: "NOSE",
+    name: "Nose",
     description: "NOSE",
-    price: 123,
+    price: 1234,
     imageURL: "/uploads/1729096978306-416821715.png",
   },
 ];
