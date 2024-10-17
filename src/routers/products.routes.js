@@ -9,8 +9,6 @@ productsRouter.post("/", uploadImage("productImage"), (req, res) => {
 
   res.status(201).json({
     Image: "http://localhost:4000/uploads" + req.body.productImage,
-    productName,
-    price,
   });
 });
 

@@ -1,25 +1,30 @@
-import express from "express";
-import cors from "cors";
-import helmet from "helmet";
-import morgan from "morgan";
-import path from "node:path";
-import { productsRouter } from "./routers/products.routes.js";
+import express from 'express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import cors from 'cors';
+import productRoutes from './Routes/productRoutes.js';
 
 const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
+// Configuración de CORS
+app.use(cors({
+  origin: 'http://localhost:5173', 
+  credentials: true
+}));
+
+// Middlewares
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cors());
-app.use(helmet());
-app.use(morgan("dev"));
-app.use(
-  "/uploads",
-  express.static(path.join(path.resolve(), "src", "uploads"))
-);
+app.use(express.urlencoded({ extended: true }));
 
-//routes
-app.use("/products", productsRouter);
+// Servir archivos estáticos
+app.use('/uploads', express.static(path.join(__dirname, 'Uploads')));
 
-app.listen(4000, () => {
-  console.log("Server is running on port 4000");
+//ruta
+app.use('/api', productRoutes);
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en puerto http://localhost:${PORT}`);
 });
